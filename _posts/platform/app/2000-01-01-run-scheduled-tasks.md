@@ -1,5 +1,5 @@
 ---
-title: Run Scheduled Tasks
+title: Private Beta - Run Scheduled Tasks
 nav: Cron Tasks
 modified_at: 2021-09-07 00:00:00
 tags: app
@@ -11,6 +11,8 @@ index: 15
 Your application may need to execute some tasks at regular interval. The cron feature is here to help you run scheduled tasks based on [one-off containers]({% post_url platform/app/2000-01-01-tasks %}).
 
 Instead of running 24/7 a container to execute a task from time-to-time, the cron feature lets you start one-off containers only when you need.
+
+TBD how is it enabled
 
 ## Configuring Cron Tasks on Your Application
 
@@ -47,3 +49,24 @@ scalingo --app my-app cron-tasks
 | */10 * * * * echo biniou |      |
 +--------------------------+------+
 ```
+
+## FAQ
+
+### How To Enable Cron Tasks?
+
+HOW TO 
+
+### How To Disable Cron Tasks?
+
+You may want to disable automatic cron tasks execution, for example for [review apps]({% post_url
+platform/app/2000-01-01-review-apps %}) or staging environments.
+
+TBD
+
+### How Precise Is The Cron Feature?
+
+TBD disclaimer about precision and other solutions
+
+### How Will I Be Billed?
+
+The cron feature in itself is free. The one-off containers launched to run the commands defined in your cron tasks will be like other [one-off containers]({% post_url platform/app/2000-01-01-tasks %}) ie you will be billed for the type of container you defined in you cron task (M is the default container size) for the time it was executed. For example of you cron task ran during 5 minutes, you will be billed 5 minutes of an M container. 
